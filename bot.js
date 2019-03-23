@@ -37,5 +37,18 @@ if (message.content.startsWith(adminprefix + 'setava')) {
 }
 });
 
+client.on('message', msg => {
+    if (msg.content == 'join') {
+        if (msg.member.voiceChannel) {
+
+         if (msg.member.voiceChannel.joinable) {
+         msg.member.voiceChannel.join().then(msg.react(👍'));
+     }
+    }
+}
+})
+client.on('ready', () => { 
+client.channels.get("اي دي الروم").join();
+    });
 
 client.login(process.env.BOT_TOKEN);// لا تغير فيها شيء
